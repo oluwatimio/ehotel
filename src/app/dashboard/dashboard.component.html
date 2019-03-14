@@ -1,0 +1,33 @@
+<div style="text-align: center; margin-top: 15px">
+  <h2>Available Hotels</h2>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div *ngFor="let i of array">
+    <div class="card" style="width: 20rem; margin-right: 20px">
+      <img class="card-img-top" src="../../assets/hotelpic.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">Hotel Name</h4>
+        <p class="card-description">Quick Description</p>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book Hotel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Make a booking</h5>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
