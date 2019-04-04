@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit {
     const chain3 = {chainid: 2, name: 'The langham', numhotels: 1};
   }
   addHotels() {
+    this.http.get('http://localhost:8080/hotels').subscribe((result) => console.log(result));
 
   }
 
