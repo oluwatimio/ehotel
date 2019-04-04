@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '../../../node_modules/@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,13 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  array: number[] = [];
-  constructor() { }
+  array: any[] = [];
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    for (let i = 0; i < 10; i++) {
-      this.array.push(i);
-    }
+    this.getHotels();
   }
 
+  getHotels() {
+    this.http.get('http://localhost:8080/hotels').subscribe( result => {
+      const g: any = result;
+      for (let i = 0; i < g.length;  i++) {
+        this.array.push(g[i]);
+      }
+      console.log(this.array);
+    });
+  }
+  done() {
+
+  }
 }
