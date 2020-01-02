@@ -1,27 +1,21 @@
 # Ehotel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+## What is this repo?
 
-## Development server
+This is the frontend for the repo ehotel-backend.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The components in the frontend can be seen in src/components folder. The state management and services for the frontend can be seen in utils folder.
 
-## Code scaffolding
+The backend can be seen here https://github.com/bamboozooled/ehotel-backend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Angular 7
+* Redux (NGREDUX)
+* TypeScript
+* Utilizing and using a NodeJS (Express) Backend.
+* Observables and RxJS
+* Promises
+* Firebase Auth
+* Firebase Session Tokens
+* HashMaps and Arrays
