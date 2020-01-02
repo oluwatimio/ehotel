@@ -7,6 +7,7 @@ This is the frontend for the repo ehotel-backend.
 The components in the frontend can be seen in src/components folder. The state management and services for the frontend can be seen in utils folder.
 
 The backend can be seen here https://github.com/bamboozooled/ehotel-backend
+The website can be accessed here https://e-hotels.firebaseapp.com
 
 ## Tech Stack
 
@@ -18,4 +19,5 @@ The backend can be seen here https://github.com/bamboozooled/ehotel-backend
 * Promises
 * Firebase Auth
 * Firebase Session Tokens
+* Firebase Hosting
 * HashMaps and Arrays
