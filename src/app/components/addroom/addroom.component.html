@@ -1,0 +1,52 @@
+<div class="modal" tabindex="-1" role="dialog" id="addRoomModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Room</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group bmd-form-group">
+            <label for="hotelIdInput" class="bmd-label-floating">Hotel ID</label>
+            <input type="string" class="form-control" id="hotelIdInput" #hotelid>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="amInput" class="bmd-label-floating">Ammenities</label>
+            <input type="text" class="form-control" id="amInput" #ammenities>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="viewInput" class="bmd-label-floating">View</label>
+            <input type="text" class="form-control" id="viewInput" #view>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="priceInput" class="bmd-label-floating">Price</label>
+            <input type="number" class="form-control" id="priceInput" #price>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="capacityInput" class="bmd-label-floating">How many people can stay in this room?</label>
+            <input type="number" class="form-control" id="capacityInput" #capacity>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="roomInput" class="bmd-label-floating">Room Number</label>
+            <input type="number" class="form-control" id="roomInput" #roomNum>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="inputState" class="bmd-label-floating">Can be extended?</label>
+            <select id="inputState" class="form-control" #extension>
+              <option selected>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-{{theme}}" (click)="addRoom(hotelid.value,
+        ammenities.value, view.value, price.value, capacity.value, extension.value, roomNum.value)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+

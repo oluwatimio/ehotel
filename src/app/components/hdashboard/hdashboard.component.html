@@ -1,0 +1,80 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" id="columns">
+  <app-infocard [headerName]="'Total number of Booked Rooms'"
+                [backgroundColor]="'bg-info'"
+                [buttonAction]="functioncall"
+                [statValue]="bookings.length"
+                [statDescription]="' Total bookings on Ehotels.'"
+                [buttonString]="'See Chart'" cdkDrag>
+  </app-infocard>
+  <app-infocard [headerName]="'Amount Earned'"
+                [backgroundColor]="'bg-dark'"
+                [buttonAction]="functioncall"
+                [statValue]="totalAmountEarned"
+                [statDescription]="'Total amount made from all bookings.'"
+                [buttonString]="'See Chart'" cdkDrag>
+  </app-infocard>
+  <app-infocard [headerName]="'Average Price Per booking'"
+                [backgroundColor]="'bg-warning'"
+                [buttonAction]="functioncall"
+                [statValue]="averagePricePerBooking"
+                [statDescription]="'Average price per booking on Ehotels.'"
+                [buttonString]="'See Chart'" cdkDrag>
+  </app-infocard>
+  <app-infocard [headerName]="'Highest Booked Hotel'"
+                [backgroundColor]="'bg-rose'"
+                [buttonAction]="functioncall"
+                [statValue]="'Hyatt'"
+                [statDescription]="'Ottawa, K1L7A9.'"
+                [buttonString]="'See Chart'" cdkDrag>
+  </app-infocard>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <app-librarytable [itemControlColor]="'btn-outline-danger'" [btnAddColor]="'btn-danger'"
+                    [headerColor]="'card-header-danger'" [textColor]="'text-danger'"
+                    [headerName]="'Hotel Chains'"
+                    [headers]="['ID', 'Name', 'Hotels']"
+                    [addText]="'Add Chain'"
+                    [editAction]="functioncall"
+                    [infoAction]="functioncall"
+                    [deleteAction]="functioncall"
+                    [addAction]="addHotelChainModal"
+                    [tableData]="hotelChains">
+  </app-librarytable>
+  <app-librarytable [itemControlColor]="'btn-outline-primary'" [btnAddColor]="'btn-primary'"
+                    [headerColor]="'card-header-primary'" [textColor]="'text-primary'"
+                    [headerName]="'Your hotels'"
+                    [headers]="['ID','Name', 'Rooms', 'Address', 'Bookings']"
+                    [addText]="'Add Hotel'"
+                    [editAction]="functioncall"
+                    [infoAction]="functioncall"
+                    [deleteAction]="functioncall"
+                    [addAction]="addHotelModal"
+                    [tableData]="hotels">
+  </app-librarytable>
+  <app-librarytable [itemControlColor]="'btn-outline-danger'" [btnAddColor]="'btn-rose'"
+                    [headerColor]="'card-header-rose'" [textColor]="'text-rose'"
+                    [headerName]="'Hotel Bookings'"
+                    [headers]="['Name', 'Hotel', 'Room Number', 'Booking ID']"
+                    [addText]="'Add Booking'"
+                    [editAction]="functioncall"
+                    [infoAction]="functioncall"
+                    [deleteAction]="functioncall"
+                    [addAction]="addBookingModal"
+                    [tableData]="bookings">
+  </app-librarytable>
+  <app-librarytable [itemControlColor]="'btn-outline-info'" [btnAddColor]="'btn-info'"
+                    [headerColor]="'card-header-info'" [textColor]="'text-info'"
+                    [headerName]="'Hotel Rooms'"
+                    [headers]="['Room ID', 'Room Number','Hotel', 'Price', 'Capacity']"
+                    [addText]="'Add Room'"
+                    [editAction]="functioncall"
+                    [infoAction]="functioncall"
+                    [deleteAction]="functioncall"
+                    [addAction]="addRoomModal"
+                    [tableData]="rooms">
+  </app-librarytable>
+</div>
+<app-addchain [theme]="'danger'" [addChain]="addChain"></app-addchain>
+<app-addhotel [theme]="'primary'" [addHotel]="addHotel"></app-addhotel>
+<app-addroom [theme]="'info'" [addRoom]="addRoom"></app-addroom>
+<app-addbooking [theme]="'rose'" [addBooking]="addBooking"></app-addbooking>

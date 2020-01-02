@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class=" text-{{textColor}}">
+  <th *ngFor="let header of headers">
+    {{header}}
+  </th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of tableData">
+    <!--Iterating through a simple array of just plain info for the row.-->
+    <td *ngFor="let dataInfo of data | slice:1" style="text-align: center"><p style="width: 70px;">{{dataInfo}}</p></td>
+    <td>
+      <button type="button" class="btn btn-round {{btnActionColor}}" (click)="addAction(data)">{{addText}}</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div style="text-align: center" *ngIf="tableData.length == 0">
+  <h4 class="{{textColor}}">All rooms booked for this hotel</h4>
+</div>

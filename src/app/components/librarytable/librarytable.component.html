@@ -1,0 +1,69 @@
+<div class="card" style="width: 580px; height: 100%; margin-left: 20px; margin-right: 20px">
+  <div class="card-header {{headerColor}}">
+    <h4 class="card-title">{{headerName}}</h4>
+  </div>
+  <div class="card-body">
+    <div>
+      <button class="btn btn-primary btn-fab btn-fab-mini btn-round {{itemControlColor}}"
+              style="margin-right: 5px;" (click)="editAction()">
+        <i class="material-icons">edit</i>
+      </button>
+      <button class="btn btn-primary btn-fab btn-fab-mini btn-round {{itemControlColor}}"
+              style="margin-right: 5px;" (click)="deleteAction()">
+        <i class="material-icons">close</i>
+      </button>
+      <button class="btn btn-primary btn-fab btn-fab-mini btn-round {{itemControlColor}}"
+              style="margin-right: 5px;" (click)="infoAction()">
+        <i class="material-icons">info</i>
+      </button>
+    </div>
+    <table class="table">
+      <thead class="{{textColor}}">
+      <th>
+        <div class="form-check" style="margin-left: -5px;">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+            <span class="form-check-sign">
+              <span class="check"></span></span>
+          </label>
+        </div>
+      </th>
+      <th *ngFor="let header of headers">
+        {{header}}
+      </th>
+      </thead>
+      <tbody>
+      <!--Iterating through array of all the data in the table-->
+      <tr *ngFor="let data of tableData">
+        <td>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="">
+              <span class="form-check-sign">
+              <span class="check"></span></span>
+            </label>
+          </div>
+        </td>
+        <!--Iterating through a simple array of just plain info for the row.-->
+        <td *ngFor="let dataInfo of data"><p style="width: 70px;">{{dataInfo}}</p></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align: center" *ngIf="tableData.length == 0">
+    <h4 class="{{textColor}}">No data found for rows</h4>
+  </div>
+  <nav fxLayoutAlign="center center">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link {{textColor}}" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link {{textColor}}" href="#">1</a></li>
+      <li class="page-item"><a class="page-link {{textColor}}" href="#">2</a></li>
+      <li class="page-item"><a class="page-link {{textColor}}" href="#">3</a></li>
+      <li class="page-item"><a class="page-link {{textColor}}" href="#">Next</a></li>
+    </ul>
+  </nav>
+  <div class="card-footer text-muted">
+    Updated 1 min ago
+    <button type="button" class="btn btn-round {{btnAddColor}}" (click)="addAction()">{{addText}}</button>
+  </div>
+</div>

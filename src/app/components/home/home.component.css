@@ -1,0 +1,73 @@
+#image{
+  /*background-image: url("../../assets/city.jpg");*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+  /*background-size: 100% 100%;*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*text-align: center;*/
+  /*line-height: 200px;*/
+
+}
+
+body{
+  margin: 0 !important;
+}
+
+#welcome{
+  margin: 100px;
+  display: inline-block;
+}
+
+#experience{
+  margin-top: 50px;
+}
+
+#forhotels{
+  text-align: center;
+  margin-top: 50px;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  color: white;
+  font-size: 60px;
+}
+
+.modal-header{
+  border-bottom: 0px !important;
+}
+
+.modal-footer{
+  border-top: 0px !important;
+}
+
+#styleCard{
+  background-image: url("https://a0.muscache.com/im/pictures/e5fb7a9a-d068-4e71-a33c-4f6ba0fc9be6.jpg?aki_policy=poster");
+  background-size: 250px 350px;
+  border-radius: 20px;
+}
+
+#styleCard2{
+  background-image: url("https://a0.muscache.com/im/pictures/8223757b-d345-4a55-8fdd-b1d766166ecd.jpg?aki_policy=poster");
+  background-size: 250px 350px;
+  border-radius: 20px;
+}
+
+#styleCard3{
+  background-image: url("https://a0.muscache.com/im/pictures/c7c04d67-777a-4bad-ad26-74b0a1a333eb.jpg?aki_policy=poster");
+  background-size: 250px 350px;
+  border-radius: 20px;
+}
+#styleCard4{
+  background-image: url("https://a0.muscache.com/im/pictures/74ff060d-cda5-4b55-aca8-c79024b57903.jpg?aki_policy=poster");
+  background-size: 250px 350px;
+  border-radius: 20px;
+}
+#styleCard5{
+  background-image: url("https://a0.muscache.com/im/pictures/fd824c87-47b5-4e48-9b24-c44436135ea8.jpg?aki_policy=poster");
+  background-size: 250px 350px;
+  border-radius: 20px;
+}

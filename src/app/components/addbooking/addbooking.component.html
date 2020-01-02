@@ -1,0 +1,36 @@
+<div class="modal" tabindex="-1" role="dialog" id="addBookingModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group bmd-form-group">
+            <label for="roomIdInput" class="bmd-label-floating">Room Number</label>
+            <input type="number" class="form-control" id="roomIdInput" #roomNumber>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="hotelIdInput" class="bmd-label-floating">Hotel ID</label>
+            <input type="text" class="form-control" id="hotelIdInput" #hotelId>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="nameInput" class="bmd-label-floating">Customer's Full Name</label>
+            <input type="text" class="form-control" id="nameInput" #cname>
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="ssnInput" class="bmd-label-floating">Customer's Account ID</label>
+            <input type="text" class="form-control" id="ssnInput" #ssn>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-{{theme}}" (click)="addBooking(roomNumber.value, hotelId.value,
+        cname.value, ssn.value)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+export const add_user = 'add_user';
+export const login_user = 'login_user';
+export const add_dashboard_chain = 'add_dashboard_chain';
+export const add_dashboard_hotel = 'add_dashboard_hotel';
+export const add_dashboard_room = 'add_dashboard_room';
+export const add_dashboard_booking = 'add_dashboard_booking';
+export const add_available_rooms_for_booking = 'add_available_rooms_for_booking';
+export const add_hotels = 'add_hotels';
+export const logout = 'logout';
