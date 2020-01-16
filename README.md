@@ -12,8 +12,8 @@ The website can be accessed here https://e-hotels.firebaseapp.com
 ## Test login info for Shopify - 
 
 ### Book a hotel with this customer account
-Login for customer account = testshopifycustomer@ehotels.com
-Password = testshopify
+Login for customer account = testshopifybooking@ehotels.com
+Password = bookinghotel
 
 ### Create a hotel with this hotel account
 Login for hotel account = testshopifyhotel2@ehotels.com
