@@ -9,6 +9,16 @@ The components in the frontend can be seen in src/components folder. The state m
 The backend can be seen here https://github.com/bamboozooled/ehotel-backend
 The website can be accessed here https://e-hotels.firebaseapp.com
 
+## Test loging info for Shopify - 
+
+### Book a hotel with this customer account
+Login for customer account = testshopifycustomer@ehotels.com
+Password = testshopify
+
+### Create a hotel with this hotel account
+Login for hotel account = testshopifyhotel2@ehotels.com
+Password = testinghotel
+
 ## Tech Stack
 
 * Angular 7
