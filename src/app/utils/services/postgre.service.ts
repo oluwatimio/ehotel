@@ -39,8 +39,8 @@ export class PostgreService {
     });
   }
 
-  addHotel(chainid: string, hotelid: string, name: string, email: string, phoneNumber: number, rating: number, address: string,
-           uid: string) {
+  addHotel(chainid: string, hotelid: string, name: string, email: string, phoneNumber: string, rating: number, address: string,
+           uid: string, imageLink: string) {
     const queryObject = {
       name: name,
       chainid: chainid,
@@ -50,6 +50,7 @@ export class PostgreService {
       rating: rating,
       address: address,
       uid: uid,
+      imagelink: imageLink,
       idToken: this.ngRedux.getState().signInToken
     };
 
@@ -158,7 +159,7 @@ export class PostgreService {
       this.http.get(queryString, {headers: {'Content-Type': 'application/json'}, params: params}).subscribe((response: any) => {
         if (response.result === Results.OK) {
           this.ngRedux.dispatch({type: add_dashboard_booking, bookings: response.payload});
-          resolve()
+          resolve();
         }
       });
     });

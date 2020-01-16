@@ -15,6 +15,7 @@ declare var $: any;
 export class DashboardComponent implements OnInit {
   hotels: any[] = [];
   hotelClicked: any;
+  defaultHotelCardImage = 'https://a0.muscache.com/im/pictures/fe67a25e-4e5c-4bc8-8c43-3da049438c2e.jpg?aki_policy=poster';
   availableRoomsForHotel: any[][] = [];
   roomClickedForBooking: any[];
   constructor(private http: HttpClient, private ngRedux: NgRedux<AppState>, private postgreService: PostgreService,

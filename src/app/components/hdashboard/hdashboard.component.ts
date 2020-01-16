@@ -96,10 +96,10 @@ export class HdashboardComponent implements OnInit {
     });
   }
 
-  addHotel = (chainid: string, name: string, email: string, phoneNumber: number, rating: number, address: string) => {
+  addHotel = (chainid: string, name: string, email: string, phoneNumber: string, rating: number, address: string, imageLink: string) => {
     this.guidService.generateUniqueId().then((hotelId: string) => {
       this.postgreService.addHotel(chainid, hotelId, name, email, phoneNumber, rating, address,
-        this.ngRedux.getState().fireAuthObject.uid);
+        this.ngRedux.getState().fireAuthObject.uid, imageLink);
       $('#addHotelModal').modal('hide');
     });
   }
@@ -128,7 +128,6 @@ export class HdashboardComponent implements OnInit {
     });
 
     this.bookings.forEach((booking) => {
-      console.log(booking[2] + booking[1]);
       const key = booking[2] + booking[1];
       if (this.roomHotelIDPrice.has(key)) {
         this.totalAmountEarned += this.roomHotelIDPrice.get(key);

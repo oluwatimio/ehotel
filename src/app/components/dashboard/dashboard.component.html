@@ -5,7 +5,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
   <div *ngFor="let hotel of hotels">
     <div class="card" style="width: 250px; height: 350px; border-radius: 20px; margin-right: 20px" (click)="viewHotelInfo(hotel)">
-      <div class="card-body" id="styleCard">
+      <div class="card-body" id="styleCard" [ngStyle]="{'background-image': 'url(' + hotel.imagelink + ')'}">
         <div id="cardInfoStyle">
           <div style="margin: 5px">
             <h4 style="font-weight: bold">{{hotel.name}}</h4>

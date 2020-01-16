@@ -23,7 +23,7 @@
           </div>
           <div class="form-group bmd-form-group">
             <label for="phoneInput" class="bmd-label-floating">Phone Number</label>
-            <input type="number" class="form-control" id="phoneInput" #phone>
+            <input type="text" class="form-control" id="phoneInput" #phone>
           </div>
           <div class="form-group bmd-form-group">
             <label for="ratingInput" class="bmd-label-floating">Rating</label>
@@ -33,11 +33,15 @@
             <label for="addressInput" class="bmd-label-floating">Address</label>
             <input type="text" class="form-control" id="addressInput" #address>
           </div>
+          <div class="form-group bmd-form-group">
+            <label for="imageInput" class="bmd-label-floating">Hotel Image URL</label>
+            <input type="text" class="form-control" id="imageInput" #imageUrl>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-{{theme}}" (click)="addHotel(chainid.value, hotelname.value, email.value,
-        phone.value, rating.value, address.value)">Add</button>
+        phone.value, rating.value, address.value, imageUrl.value)">Add</button>
       </div>
     </div>
   </div>
