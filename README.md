@@ -11,7 +11,7 @@ The website can be accessed here https://e-hotels.firebaseapp.com
 
 ## Important Notes
 
-E-hotel is an application concept I made for a hotel booking application that we can customize for each hotel. The dashboard is where hotel managers can really see info about their respective hotel chains. Some features are still in the works. Features such as chart in dashboard and adventures in the home page. Overall, you can create a hotel chain, add hotels to the chain, add hotel rooms and create bookings. Customer's can also sign up and book available rooms.
+E-hotel is an application concept I made for a hotel booking application that we can customize for each hotel. The dashboard is where hotel managers can really see info about their respective hotel chains. Some features are still in the works. Features such as `chart` in dashboard and `adventures` in the home page. Overall, you can create a hotel chain, add hotels to the chain, add hotel rooms and create bookings. Customer's can also sign up and book available rooms.
 
 ## Test login info for Shopify - 
 
