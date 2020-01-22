@@ -28,7 +28,7 @@ Password = testinghotel
 * Angular 7
 * Redux (NGREDUX)
 * TypeScript
-* Utilizing and using a NodeJS (Express) Backend.
+* Utilizing a NodeJS (Express) Backend.
 * Observables and RxJS
 * Promises
 * Firebase Auth
