@@ -6,6 +6,8 @@ This is the frontend for the repo ehotel-backend.
 
 The components in the frontend can be seen in `src/app/components` folder. The state management and services for the frontend can be seen in utils folder.
 
+My favourite component is `hdashboard` in `src/app/components` It is the dashboard for adding hotels, hotel chains, bookings and rooms.
+
 The backend can be seen here https://github.com/bamboozooled/ehotel-backend
 The website can be accessed here https://e-hotels.firebaseapp.com
 
