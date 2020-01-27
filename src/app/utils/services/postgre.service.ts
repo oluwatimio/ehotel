@@ -25,7 +25,7 @@ export class PostgreService {
   constructor(private http: HttpClient, private ngRedux: NgRedux<AppState>, private _snackBar: MatSnackBar) { }
 
   addChain(chainId: string, name: string, numHotels: number, uid: string) {
-    const queryObject = {chainid: chainId, name: name, numhotels: numHotels, uid: uid, idToken: this.ngRedux.getState().signInToken};
+    const queryObject = {chainid: chainId, name: name, numhotels: numHotels, uid: uid, token: this.ngRedux.getState().signInToken};
     const queryString = this.API_LINK + '/chain/add';
 
     this.http.post(queryString, JSON.stringify(queryObject),
@@ -51,7 +51,7 @@ export class PostgreService {
       address: address,
       uid: uid,
       imagelink: imageLink,
-      idToken: this.ngRedux.getState().signInToken
+      token: this.ngRedux.getState().signInToken
     };
 
     const queryString = this.API_LINK + '/hotel/add';
@@ -80,7 +80,7 @@ export class PostgreService {
       capacity: capacity,
       extension: extension,
       uid: uid,
-      idToken: this.ngRedux.getState().signInToken
+      token: this.ngRedux.getState().signInToken
     };
 
     const queryString = this.API_LINK + '/room/add';
@@ -100,7 +100,8 @@ export class PostgreService {
       roomid: roomNumber,
       ssn: ssn,
       hotelid: hotelID,
-      fullname: customerName
+      fullname: customerName,
+      token: this.ngRedux.getState().signInToken
     };
     const queryString = this.API_LINK + '/room/book';
 

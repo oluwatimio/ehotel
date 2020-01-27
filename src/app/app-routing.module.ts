@@ -4,9 +4,10 @@ import {HomeComponent} from './components/home/home.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {CbookingsComponent} from './components/cbookings/cbookings.component';
 import {HdashboardComponent} from './components/hdashboard/hdashboard.component';
+import {BookingComponent} from './components/booking/booking.component';
 
 const routes: Routes = [{path: '', component: HomeComponent},
-  {path: 'bookingdashboard', component: DashboardComponent},
+  {path: 'bookingdashboard', component: BookingComponent},
   {path: 'cbookings', component: CbookingsComponent},
   {path: 'employeedashboard', component: HdashboardComponent}
   ];

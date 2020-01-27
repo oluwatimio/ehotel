@@ -12,5 +12,9 @@ export class AddbookingComponent implements OnInit {
 
   ngOnInit() {
   }
+  // checkBookingIsValid(roomNumber: number, hotelId: string,
+  // cname: string, ssn: string) {
+  //   if (roomNumber.strip)
+  // }
 
 }

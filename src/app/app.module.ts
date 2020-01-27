@@ -31,6 +31,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SignupemployeeComponent } from './components/signupemployee/signupemployee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BookingComponent } from './components/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CustomernamedialogComponent,
     SigninComponent,
     SignupComponent,
-    SignupemployeeComponent
+    SignupemployeeComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

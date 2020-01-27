@@ -8,6 +8,7 @@ import {add_user, login_user, logout} from '../redux/action';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
 import {API_BASE} from '../backend/api-v1/routes';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AuthService {
   API_LINK = API_BASE();
   private currentUser = new BehaviorSubject(null);
   user = this.currentUser.asObservable();
-  constructor(private http: HttpClient, private ngRedux: NgRedux<AppState>, private router: Router) {
+  constructor(private http: HttpClient, private ngRedux: NgRedux<AppState>, private router: Router, private _snackBar: MatSnackBar) {
     this.userObj = {};
     this.observeUser();
   }
@@ -57,6 +58,10 @@ export class AuthService {
                 resolve(result);
             });
           });
+        }).catch((error) => {
+          this._snackBar.open(error.message, 'Dismiss', {
+            duration: 5000,
+          });
         });
       });
   }
@@ -91,6 +96,10 @@ export class AuthService {
           this.setUserState(userCredential.user).then((result) => {
             resolve(result);
           });
+        });
+      }).catch((error) => {
+        this._snackBar.open(error.message, 'Dismiss', {
+          duration: 5000,
         });
       });
     });
