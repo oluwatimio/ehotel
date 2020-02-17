@@ -32,6 +32,7 @@ import { SignupemployeeComponent } from './components/signupemployee/signupemplo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BookingComponent } from './components/booking/booking.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { BookingComponent } from './components/booking/booking.component';
     DragDropModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService, PostgreService, GuidService],
   bootstrap: [AppComponent]

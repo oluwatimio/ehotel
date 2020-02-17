@@ -8,7 +8,6 @@ import {BookingComponent} from './components/booking/booking.component';
 
 const routes: Routes = [{path: '', component: HomeComponent},
   {path: 'bookingdashboard', component: BookingComponent},
-  {path: 'cbookings', component: CbookingsComponent},
   {path: 'employeedashboard', component: HdashboardComponent}
   ];
 

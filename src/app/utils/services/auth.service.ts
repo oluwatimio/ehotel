@@ -71,7 +71,7 @@ export class AuthService {
         userCredential.getIdToken().then((idToken) => {
           const userObject = {email: userCredential.email, token: idToken, ssn: userCredential.uid};
           const queryString = this.API_LINK + '/user';
-          this.http.post(queryString, JSON.stringify(userObject), {headers: {'Content-Type': 'application/json'}}).subscribe(
+          this.http.post(queryString, JSON.stringify(userObject), {headers: {'Content-Type': 'application/json'}}).subscribe( // make it a GET request
             (result: any) => {
               this.ngRedux.dispatch({
                 type: login_user,
@@ -92,10 +92,8 @@ export class AuthService {
   login(email: string, password: string) {
     return new Promise(resolve => {
       firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential: firebase.auth.UserCredential) => {
-        userCredential.user.getIdToken().then((idToken) => {
-          this.setUserState(userCredential.user).then((result) => {
-            resolve(result);
-          });
+        this.setUserState(userCredential.user).then((result) => {
+          resolve(result);
         });
       }).catch((error) => {
         this._snackBar.open(error.message, 'Dismiss', {
