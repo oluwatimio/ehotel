@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { CbookingsComponent } from './components/cbookings/cbookings.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -39,7 +38,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AppComponent,
     HomeComponent,
     NavComponent,
-    DashboardComponent,
     CbookingsComponent,
     HdashboardComponent,
     LibrarytableComponent,
