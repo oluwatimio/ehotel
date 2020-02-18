@@ -52,23 +52,23 @@ export function rootReducer(state: AppState, action) { // Our root reducer descr
         userType: action.userObj.userType
       });
     case add_dashboard_chain:
+      addHotelChain(state, action)
       return Object.assign({}, state, {
-        user: addHotelChain(state, action),
         hotelChainsDashboard: state.hotelChainsDashboard
       });
     case add_dashboard_hotel:
+      addHotel(state, action);
       return Object.assign({}, state, {
-        user: addHotel(state, action),
         hotelDashboard: state.hotelDashboard
       });
     case add_dashboard_room:
+      addRoom(state, action)
       return Object.assign({}, state, {
-        user: addRoom(state, action),
         roomDashboard: state.roomDashboard
       });
     case add_dashboard_booking:
+      addBooking(state, action)
       return Object.assign({}, state, {
-        user: addBooking(state, action),
         bookingDashboard: state.bookingDashboard
       });
     case add_available_rooms_for_booking:
@@ -93,7 +93,7 @@ function createUserObject(userObject: any) {
 }
 
 const addHotelChain = (state, action) => {
-  if (action.chains.length > 1) {state.hotelChainsDashboard = []; }
+  if (!action.updateOperation) {state.hotelChainsDashboard = []; }
     action.chains.forEach((chain) => {
       const chainData = [];
       chainData.push(chain.chainid);
@@ -103,11 +103,10 @@ const addHotelChain = (state, action) => {
       state.user.addToHotelChains(hotelChain);
       state.hotelChainsDashboard.push(chainData);
     });
-    return state.user;
 };
 
 const addHotel = (state, action) => {
-  if (action.hotels.length > 1) {state.hotelDashboard = []; }
+  if (!action.updateOperation) {state.hotelDashboard = []; }
   action.hotels.forEach((hotel) => {
     const hotelData = [];
     hotelData.push(hotel.hotelid);
@@ -120,16 +119,15 @@ const addHotel = (state, action) => {
     state.user.addToHotels(hotelObject);
     state.hotelDashboard.push(hotelData);
   });
-  return state.user;
 };
 
 const addRoom = (state, action) => {
-  if (action.rooms.length > 1) {state.roomDashboard = []; }
+  if (!action.updateOperation) {state.roomDashboard = []; }
   action.rooms.forEach((room) => {
     const roomData = [];
     roomData.push(room.roomid);
     roomData.push(room.roomnumber);
-    roomData.push(room.hotelid);
+    roomData.push(state.user.getHotelNameFromId(room.hotelid));
     roomData.push(room.price);
     roomData.push(room.capacity);
     // roomData.push(room.booked);
@@ -137,20 +135,18 @@ const addRoom = (state, action) => {
     state.user.addToRooms(roomObject);
     state.roomDashboard.push(roomData);
   });
-  return state.user;
 };
 
 const addBooking = (state, action) => {
-  if (action.bookings.length > 1) {state.bookingDashboard = []; }
+  if (!action.updateOperation) {state.bookingDashboard = []; }
   action.bookings.forEach((booking) => {
     const bookingData = [];
     bookingData.push(booking.fullname);
-    bookingData.push(booking.hotelid);
-    bookingData.push(booking.roomid);
+    bookingData.push(state.user.getHotelNameFromId(booking.hotelid));
+    bookingData.push(state.user.getRoomNumFromId(booking.roomid));
     bookingData.push(booking.bid);
     state.bookingDashboard.push(bookingData);
   });
-  return state.user;
 };
 
 const makeAvailableRoomsArray = (rooms) => {

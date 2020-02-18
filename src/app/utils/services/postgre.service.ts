@@ -31,7 +31,7 @@ export class PostgreService {
     this.http.post(queryString, JSON.stringify(queryObject),
       {headers: {'Content-Type': 'application/json'}}).subscribe((response: any) => {
         if (response.result === Results.OK) {
-          this.ngRedux.dispatch({type: add_dashboard_chain, chains: [response.payload]});
+          this.ngRedux.dispatch({type: add_dashboard_chain, chains: [response.payload], updateOperation: true});
           this._snackBar.open('Chain add successful' , 'Dismiss', {
             duration: 5000,
           });
@@ -59,7 +59,7 @@ export class PostgreService {
     this.http.post(queryString, JSON.stringify(queryObject),
       {headers: {'Content-Type': 'application/json'}}).subscribe((response: any) => {
         if (response.result === Results.OK) {
-          this.ngRedux.dispatch({type: add_dashboard_hotel, hotels: [response.payload]});
+          this.ngRedux.dispatch({type: add_dashboard_hotel, hotels: [response.payload], updateOperation: true});
           this._snackBar.open('Hotel add successful' , 'Dismiss', {
             duration: 5000,
           });
@@ -87,7 +87,7 @@ export class PostgreService {
     this.http.post(queryString, JSON.stringify(queryObject), {headers: {'Content-Type': 'application/json'}})
       .subscribe((response: any) => {
         if (response.result === Results.OK) {
-          this.ngRedux.dispatch({type: add_dashboard_room, rooms: [response.payload]});
+          this.ngRedux.dispatch({type: add_dashboard_room, rooms: [response.payload], updateOperation: true});
           this._snackBar.open('Room add successful' , 'Dismiss', {
             duration: 5000,
           });
@@ -111,7 +111,7 @@ export class PostgreService {
           duration: 5000,
         });
         if (response.result === Results.OK && this.ngRedux.getState().userType === Accounts.EMPLOYEE) {
-          this.ngRedux.dispatch({type: add_dashboard_booking, bookings: [response.payload]});
+          this.ngRedux.dispatch({type: add_dashboard_booking, bookings: [response.payload], updateOperation: true});
         }
       });
   }
@@ -122,7 +122,7 @@ export class PostgreService {
 
     this.http.get(queryString, {headers: {'Content-Type': 'application/json'}, params: params}).subscribe((result: any) => {
       if (result.result === Results.OK) {
-        this.ngRedux.dispatch({type: add_dashboard_chain, chains: result.payload});
+        this.ngRedux.dispatch({type: add_dashboard_chain, chains: result.payload, updateOperation: false});
       }
     });
   }
@@ -133,7 +133,7 @@ export class PostgreService {
 
     this.http.get(queryString, {headers: {'Content-Type': 'application/json'}, params: params}).subscribe((response: any) => {
       if (response.result === Results.OK) {
-        this.ngRedux.dispatch({type: add_dashboard_hotel, hotels: response.payload});
+        this.ngRedux.dispatch({type: add_dashboard_hotel, hotels: response.payload, updateOperation: false});
       }
     });
   }
@@ -145,7 +145,7 @@ export class PostgreService {
 
       this.http.get(queryString, {headers: {'Content-Type': 'application/json'}, params: params}).subscribe((response: any) => {
         if (response.result === Results.OK) {
-          this.ngRedux.dispatch({type: add_dashboard_room, rooms: response.payload});
+          this.ngRedux.dispatch({type: add_dashboard_room, rooms: response.payload, updateOperation: false});
           resolve();
         }
       });
@@ -159,7 +159,7 @@ export class PostgreService {
 
       this.http.get(queryString, {headers: {'Content-Type': 'application/json'}, params: params}).subscribe((response: any) => {
         if (response.result === Results.OK) {
-          this.ngRedux.dispatch({type: add_dashboard_booking, bookings: response.payload});
+          this.ngRedux.dispatch({type: add_dashboard_booking, bookings: response.payload, updateOperation: false});
           resolve();
         }
       });

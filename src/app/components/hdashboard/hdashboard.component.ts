@@ -20,6 +20,8 @@ export class HdashboardComponent implements OnInit {
   roomHotelIDPrice: Map<string, number> = new Map();
   totalAmountEarned = 0;
   averagePricePerBooking = 0;
+  bookedHotelsCount: Map<string, number> = new Map();
+  highestBookedHotel: string;
   constructor( private ngRedux: NgRedux<AppState>, private postgreService: PostgreService, private guidService: GuidService) {}
   ngOnInit() {
     this.ngRedux.select('loggedIn').subscribe((loggedIn: boolean) => {
@@ -51,6 +53,7 @@ export class HdashboardComponent implements OnInit {
     });
     await this.loadBookings();
     this.caluclateTotalAmountEarned();
+    this.calculateHighestBookedHotel();
   }
 
   loadHotelChains() {
@@ -124,7 +127,7 @@ export class HdashboardComponent implements OnInit {
     this.totalAmountEarned = 0;
     this.averagePricePerBooking = 0;
     this.rooms.forEach((room) => {
-      this.roomHotelIDPrice.set(room[0] + room[2], parseFloat(room[3]));
+      this.roomHotelIDPrice.set(room[1] + room[2], parseFloat(room[3]));
     });
 
     this.bookings.forEach((booking) => {
@@ -134,5 +137,27 @@ export class HdashboardComponent implements OnInit {
       }
     });
     this.averagePricePerBooking = this.totalAmountEarned / this.bookings.length;
+  }
+
+  calculateHighestBookedHotel = () => {
+    let maxBookedHotel = '';
+    let maxCount = 0;
+    this.bookings.forEach((booking) => {
+      if (!this.bookedHotelsCount.has(booking[1])) {
+        this.bookedHotelsCount.set(booking[1], 1);
+        if (1 > maxCount) {
+          maxCount = 1;
+          maxBookedHotel = booking[1];
+        }
+      } else {
+        const count = this.bookedHotelsCount.get(booking[1]) + 1;
+        this.bookedHotelsCount.set(booking[1], count);
+        if (count > maxCount) {
+          maxCount = count;
+          maxBookedHotel = booking[1];
+        }
+      }
+    });
+    this.highestBookedHotel = maxBookedHotel;
   }
 }
